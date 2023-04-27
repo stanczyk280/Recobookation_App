@@ -1,4 +1,6 @@
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Recobookation.App.Books;
 using Recobookation.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +23,9 @@ builder.Services.AddCors(options =>
         policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
     });
 });
+
+//Mediator to simplify handling queries
+builder.Services.AddMediatR(typeof(BookList.Handler));
 
 var app = builder.Build();
 
