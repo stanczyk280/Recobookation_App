@@ -6,7 +6,7 @@ import axios from 'axios';
 function App() {
   const [books, setBooks] = useState([]);
 
-  //return our data from the api
+  //return data from the api
   useEffect(() => {
     axios.get('http://localhost:5000/api/books')
       .then(response => {
