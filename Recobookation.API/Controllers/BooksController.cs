@@ -5,13 +5,13 @@ using Recobookation.Persistence;
 
 namespace Recobookation.API.Controllers
 {
-    public class BookController : BaseApiController
+    public class BooksController : BaseApiController
     {
         private readonly DataContext context;
 
-        public BookController(DataContext Context)
+        public BooksController(DataContext context)
         {
-            Context = context;
+            this.context = context;
         }
 
         //api/books
