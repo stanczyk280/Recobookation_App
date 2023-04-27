@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Recobookation.App.Books;
+using Recobookation.App.Core;
 using Recobookation.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,7 @@ builder.Services.AddCors(options =>
 
 //Mediator to simplify handling queries
 builder.Services.AddMediatR(typeof(BookList.Handler));
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 var app = builder.Build();
 

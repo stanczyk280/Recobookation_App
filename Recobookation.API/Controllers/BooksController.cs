@@ -29,5 +29,12 @@ namespace Recobookation.API.Controllers
         {
             return Ok(await Mediator.Send(new BookCreate.Command { Book = book }));
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutBook(Guid id, Book book)
+        {
+            book.Id = id;
+            return Ok(await Mediator.Send(new BookEdit.Command { Book = book }));
+        }
     }
 }

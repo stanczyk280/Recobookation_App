@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Recobookation.Persistence
 {
-    public class Seed
+    public static class Seed
     {
         public static async Task SeedData(DataContext context)
         {
