@@ -36,5 +36,11 @@ namespace Recobookation.API.Controllers
             book.Id = id;
             return Ok(await Mediator.Send(new BookEdit.Command { Book = book }));
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBook(Guid id)
+        {
+            return Ok(await Mediator.Send(new BookDelete.Command { Id = id }));
+        }
     }
 }
